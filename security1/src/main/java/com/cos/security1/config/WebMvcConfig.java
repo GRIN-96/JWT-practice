@@ -18,6 +18,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		
 		registry.viewResolver(resolver);
 	}
-	
+	 
 	
 }
