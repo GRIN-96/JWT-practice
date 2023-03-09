@@ -23,3 +23,4 @@ JWT는 유저를 인증하고 식별하기 위한 토큰(Token)기반 인증입�
 4. 서버에서 클라이언트로부터 온 JWT를 검증합니다.
 
 <img src="https://www.okta.com/sites/default/files/styles/tinypng/public/media/image/2020-12/TokenBasedAuthentication.png?itok=zXMogDjG" />
+<a href="https://www.okta.com/kr/identity-101/what-is-token-based-authentication/"> 출처 </a>
