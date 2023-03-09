@@ -21,3 +21,5 @@ JWT는 유저를 인증하고 식별하기 위한 토큰(Token)기반 인증입�
 3. 클라이언트가 서버에 데이터를 추가적으로 요구할 때 JWT를 HTTP Header에 첨부합니다.
 
 4. 서버에서 클라이언트로부터 온 JWT를 검증합니다.
+
+<img src="https://www.okta.com/sites/default/files/styles/tinypng/public/media/image/2020-12/TokenBasedAuthentication.png?itok=zXMogDjG" />
