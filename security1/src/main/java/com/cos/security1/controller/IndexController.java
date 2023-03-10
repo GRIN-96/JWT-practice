@@ -1,6 +1,8 @@
 package com.cos.security1.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -56,7 +58,7 @@ public class IndexController {
 	}
 	
 	@PostMapping("/join")
-	public @ResponseBody String join(User user) {
+	public String join(User user) {
 		System.out.println(user);
 		user.setRole("ROLE_USER");
 		String rawPassword = user.getPassword();
@@ -65,6 +67,18 @@ public class IndexController {
 		user.setPassword(encPassword);
 		userRepository.save(user); // 회원가입은 잘된다. 비밀번호 : 1234 => 시큐리티로 로그인을 할 수 없게된다. 이유는 패스워드가 암호화되지 않았기때문 !!
 		return "redirect:/loginForm"; // redirect를 붙여줘야 해당 프로젝트의 경로로 이동해줍니다 !
+	}
+	
+	@Secured("ROLE_ADMIN")  // 하나만 줄때는 secured사용합니다 !
+	@GetMapping("/info")
+	public @ResponseBody String info() {
+		return "개인정보";
+	}
+	
+	@PreAuthorize("hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')")  // 두개이상 사용시 preAuthorize hasRole 이용합니다 !
+	@GetMapping("/data")
+	public @ResponseBody String data() {
+		return "데이터정보";
 	}
 
 }
