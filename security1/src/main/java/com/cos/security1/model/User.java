@@ -21,6 +21,9 @@ public class User {
 	private String password;
 	private String email;
 	private String role; //ROLE_USER, ROLE_ADMIN
+	
+	private String provider;
+	private String providerId;  // 구글에서 pk로 주는 id
 	@CreationTimestamp
 	private Timestamp createDate;
 }
