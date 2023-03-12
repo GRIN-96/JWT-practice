@@ -1,6 +1,8 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=JWT&fontSize=90" />
 
+<br/>
+<br/>
 
 # JWT ( JSON Web Token )
 
@@ -11,8 +13,8 @@ JWT는 유저를 인증하고 식별하기 위한 토큰(Token)기반 인증입�
 데이터가 많이지면 토큰이 커질 수 있으며 한 번 발급된 이후 사용자의 정보를 바꾸어도 재발급하지 않는 이상 반영되지 안습니다.
 
 
-
-
+<br/>
+<br/>
 
 ## JWT 진행 순서
 
@@ -27,7 +29,8 @@ JWT는 유저를 인증하고 식별하기 위한 토큰(Token)기반 인증입�
 <img src="https://www.okta.com/sites/default/files/styles/tinypng/public/media/image/2020-12/TokenBasedAuthentication.png?itok=zXMogDjG" />
 <a href="https://www.okta.com/kr/identity-101/what-is-token-based-authentication/"> 이미지 출처 </a>
 
-
+<br/>
+<br/>
 
 
 ## JWT의 장점과 단점
@@ -42,8 +45,8 @@ JWT는 유저를 인증하고 식별하기 위한 토큰(Token)기반 인증입�
   2. 복잡성 : 이 토큰은 이해하기가 쉽지 않습니다. 개발자가 암호 서명 알고리즘에 정통하지 않다면 자신도 모르게 시스템을 위험에 빠뜨릴 수 있습니다. 
   3. 제한 : 메세지를 모든 클라이언트에 푸시할 수 없고, 서버 측 클라이언트도 관리할 수 없습니다.
 
-
-
+<br/>
+<br/>
 
 
 ## 인증 토큰을 시도해야 하는 이유
