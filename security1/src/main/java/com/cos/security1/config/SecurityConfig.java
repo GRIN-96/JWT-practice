@@ -16,18 +16,18 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import com.cos.security1.config.oauth.PrincipalOauth2UserService;
 
 @Configuration
-@EnableWebSecurity  // 스프링 시큐리티 필터가 스프링 필터체인에 등록이 됩니다.
+@EnableWebSecurity  // 스프링 시큐리티 필터가 스프링 필터체인에 등록이 됩니다.  // 필터 체인 관리시작 어노테이션 
 @EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)  // secured 어노테이션 활성화 / preAuthorize, postAuthorize 어노테이션 활성화
 public class SecurityConfig extends WebSecurityConfigurerAdapter{  // 스프링 시큐리티 필터 생성
 	
 	@Autowired
 	private PrincipalOauth2UserService principalOauth2UserService;
 	
-	// 해당 메서드의 리턴되는 오브젝트를 loC로 등록해준다. 
-	@Bean
-	public BCryptPasswordEncoder encodePwd() {
-		return new BCryptPasswordEncoder();
-	}
+	// 해당 메서드의 리턴되는 오브젝트를 IoC로 등록해준다. 
+//	@Bean
+//	public BCryptPasswordEncoder encodePwd() {
+//		return new BCryptPasswordEncoder();
+//	}
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {

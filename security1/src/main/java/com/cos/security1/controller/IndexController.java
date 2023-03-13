@@ -5,7 +5,6 @@ import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
@@ -60,8 +59,11 @@ public class IndexController {
 		return "index"; // src/main/resources/templates/index.mustache 경로대로 찾게됩니다!
 	}
 	
+	// OAuth 로그인을 해도 PrincipalDetails로 받을 수 있음!
+	// 일반 로그인을 해도 PrincipalDetails로 받을 수 있음!
 	@GetMapping("/user")
-	public @ResponseBody String user(@AuthenticationPrincipal PrincipalDetails principalDetails) { //
+	public @ResponseBody String user(@AuthenticationPrincipal PrincipalDetails principalDetails) { // @AuthenticationPrincipal는 
+		System.out.println("principalDetails : " + principalDetails.getUser());
 		return "user";
 	}
 	
